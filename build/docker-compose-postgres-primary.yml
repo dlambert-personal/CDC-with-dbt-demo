@@ -1,0 +1,18 @@
+version: '3.8'
+services:
+  postgres-primary:
+    image: postgres:latest
+    env_file:       
+      - .env
+    container_name: pg-primary
+    environment:
+      POSTGRES_DB: mydb
+      POSTGRES_USER: ${PG_ADMIN_USER}
+      POSTGRES_PASSWORD: ${PG_ADMIN_PWD}
+    volumes:
+      - pg_dev_data:/var/lib/postgresql/data
+      - ./sql/init.sql:/docker-entrypoint-initdb.d/init.sql
+    ports:
+      - "5432:5432"
+volumes:
+  pg_dev_data:
