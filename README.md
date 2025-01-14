@@ -3,11 +3,11 @@ CDC-with-dbt-demo
 
 
 # Build notes
-Docker compose expects volume pg_data.
+There are Docker compose files for the following:
 
-```
-docker volume create pg_data
-```
+* docker-compose-postgres-primary.yml: standalone Postgres - if you want to manage Postgres separately and/or use this as the basis for
+  a production configuration.
+* compose.yaml - main development image - based on dbt-postgress, which includes built-in Postgres.
 
 ## Python setup
 Tried dev containers (see .devcontainer folder), but it wasn't working well w/ Docker.  Now trying to manage Docker myself,
@@ -19,7 +19,7 @@ expect:
     the /build/sql directory has scripts used for setup of default data.
 
 PG container start:
-docker compose -f docker-compose-postgres-primary.yml up
+docker compose -f compose-postgres-primary.yaml up
 This is working in dbeaver at host.docker.internal
 
 If you'd like to use pgadmin, this can happen with the following:

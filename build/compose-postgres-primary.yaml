@@ -1,4 +1,4 @@
-version: '3.8'
+
 services:
   postgres-primary:
     image: postgres:latest
@@ -6,7 +6,7 @@ services:
       - .env
     container_name: pg-primary
     environment:
-      POSTGRES_DB: mydb
+      POSTGRES_DB: cdcdemo
       POSTGRES_USER: ${PG_ADMIN_USER}
       POSTGRES_PASSWORD: ${PG_ADMIN_PWD}
     volumes:

@@ -1,0 +1,55 @@
+# services:
+#   postgres-primary:
+#     image: postgres:latest
+#     env_file:       
+#       - .env
+#     container_name: pg-primary
+#     environment:
+#       POSTGRES_DB: cdcdemo
+#       POSTGRES_USER: ${PG_ADMIN_USER}
+#       POSTGRES_PASSWORD: ${PG_ADMIN_PWD}
+#     volumes:
+#       - pg_dev_data:/var/lib/postgresql/data
+#       - ./sql/init.sql:/docker-entrypoint-initdb.d/init.sql
+#     ports:
+#       - "5432:5432"
+# volumes:
+#   pg_dev_data:
+
+
+
+
+services:
+  app:
+    build:
+      context: ..
+      dockerfile: .devcontainer/Dockerfile
+
+    volumes:
+      - ../..:/workspaces:cached
+
+    # Overrides default command so things don't shut down after the process ends.
+    command: sleep infinity
+
+    # Runs app on the same network as the database container, allows "forwardPorts" in devcontainer.json function.
+    network_mode: service:db
+
+    # Use "forwardPorts" in **devcontainer.json** to forward an app port locally.
+    # (Adding the "ports" property to this file will not forward from a Codespace.)
+
+  db:
+    image: postgres:latest
+    restart: unless-stopped
+    volumes:
+      - dev-pg-data:/var/lib/postgresql/data
+      - ./sql/init.sql:/docker-entrypoint-initdb.d/init.sql
+    environment:
+      POSTGRES_DB: cdcdemo
+      POSTGRES_USER: ${PG_ADMIN_USER}
+      POSTGRES_PASSWORD: ${PG_ADMIN_PWD}
+
+    # Add "forwardPorts": ["5432"] to **devcontainer.json** to forward PostgreSQL locally.
+    # (Adding the "ports" property to this file will not forward from a Codespace.)
+
+volumes:
+  dev-pg-data:
