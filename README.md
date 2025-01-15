@@ -31,3 +31,18 @@ docker run --name pgadmin-container -p 5050:80 -e PGADMIN_DEFAULT_EMAIL=user@dom
 This shows the stuff we're adding in init.sql is working -- we just can't see it via dbeaver.
 
 # docker run --name my-pgadmin -p 82:80 -e 'PGADMIN_DEFAULT_EMAIL=laiba@yahoo.com' -e 'PGADMIN_DEFAULT_PASSWORD=pass123' -d dpage/pgadmin4
+
+
+# Sample data
+Using the contoso demo enterprise - sample data is available here:
+
+https://github.com/sql-bi/Contoso-Data-Generator-V2-Data/releases/tag/ready-to-use-data
+
+A data generator is available here:
+
+https://www.sqlbi.com/tools/contoso-data-generator/
+
+
+# Snapshots
+
+See https://en.wikipedia.org/wiki/Slowly_changing_dimension#Type_2:_add_new_row
