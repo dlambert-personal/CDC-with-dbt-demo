@@ -1,6 +1,6 @@
 ProductKey,ProductCode,ProductName,Manufacturer,Brand,Color,WeightUnit,Weight,Cost,Price,CategoryKey,CategoryName,SubCategoryKey,SubCategoryName
-1,0101001,Contoso 512MB MP3 Player E51 Silver,"Contoso, Ltd",Contoso,Silver,ounces,4.8,6.62,12.99,1,Audio,101,MP4&MP3
-2,0101002,Contoso 512MB MP3 Player E51 Blue,"Contoso, Ltd",Contoso,Blue,ounces,4.1,6.62,12.99,1,Audio,101,MP4&MP3
+1,0101001,Contoso 512MB MP3 Player E52 Silver,"Contoso, Ltd",Contoso,Silver,ounces,4.8,6.62,15.99,1,Audio,101,MP4&MP3
+2,0101002,Contoso 512MB MP3 Player E52 Blue,"Contoso, Ltd",Contoso,Blue,ounces,4.1,6.62,15.99,1,Audio,101,MP4&MP3
 3,0101003,Contoso 1G MP3 Player E100 White,"Contoso, Ltd",Contoso,White,ounces,4.5,7.4,14.52,1,Audio,101,MP4&MP3
 4,0101004,Contoso 2G MP3 Player E200 Silver,"Contoso, Ltd",Contoso,Silver,ounces,4.5,11,21.57,1,Audio,101,MP4&MP3
 5,0101005,Contoso 2G MP3 Player E200 Red,"Contoso, Ltd",Contoso,Red,ounces,2.4,11,21.57,1,Audio,101,MP4&MP3

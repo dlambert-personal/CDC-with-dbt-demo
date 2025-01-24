@@ -1,10 +1,10 @@
 snapshots:
-  - name: product-history
-    relation: ref('product')
+  - name: producthistory
+    relation: ref('CDC_with_dbt', 'product')
     description:  Slow-changing dimension view of product
     config:
       database: cdcdemo
-      schema: dbt
+#      schema: dbt
       strategy: check
       unique_key: ProductKey
       check_cols: all

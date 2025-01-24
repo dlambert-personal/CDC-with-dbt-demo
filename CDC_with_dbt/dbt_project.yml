@@ -28,11 +28,15 @@ clean-targets:         # directories to be removed by `dbt clean`
 
 seeds:
   CDC_with_dbt:
-    product
+    product:
+      header: false
+      +quote_columns: false
+      description: Contoso product data
 
-snapshots:
-  product-history:
-  
+
+# snapshots:
+#   product-history:
+
 # In this example config, we tell dbt to build all models in the example/
 # directory as views. These settings can be overridden in the individual model
 # files using the `{{ config(...) }}` macro.
